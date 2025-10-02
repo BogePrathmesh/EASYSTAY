@@ -1,0 +1,82 @@
+<% layout('/layouts/boilerplate') %>
+
+    <body>
+        <div class="row">
+            <div class="col-10 offset-2">
+                <!--this will use 8 col of window and make all field to small which is use 8 col only -->
+                <br>
+                <h2>Create a New Listing</h2>
+                <form method="POST" action="/listings" class="needs-validation" novalidate
+                    enctype="multipart/form-data">
+                    <!--Here Needs validationa and novalidate is for bascially check fields should be enter otherwise show error and using bootstrap styling -->
+                    <div>
+                        <label for="title" class="form-label">Title</label>
+                        <input name="listing[title]" placeholder="Enter Title" type="text" class="form-control"
+                            required>
+                        <!--Here We are creating the listing object that will store the values of every entitie in key value pair only-->
+                        <div class="invalid-feedback">Enter Correct Title</div>
+                        <br>
+
+                    </div>
+
+                    <div>
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="listing[description]" class="form-control " required></textarea>
+                        <div class="invalid-feedback">Enter Description</div><br>
+                        <!--font control its basically class which used in form help to ui-->
+                    </div>
+
+                    
+
+                    <div>
+                        <label for="Image" class="form-label">Upload Listing Image</label>
+                        <input name="listing[image]" type="file" class="form-control" required><br>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="Price" class="form-label">Price</label>
+                            <input name="listing[price]" placeholder="Enter Price" class="form-control " required>
+                            <div class="invalid-feedback">Enter Price </div><br>
+
+                        </div>
+
+                        <div class="col-md-8">
+                            <label for="Country" class="form-label">Country</label>
+                            <input name="listing[country]" placeholder="India" type="text" class="form-control "
+                                required>
+                            <div class="invalid-feedback">Enter Country</div><br>
+
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <label for="Location" class="form-label">Location</label>
+                        <input name="listing[location]" placeholder="Pune,Maharashatra" type="text" class="form-control"
+                            required>
+                        <div class="invalid-feedback">Enter Location</div><br>
+                    </div>
+
+                    <div class="dropdown">
+                        <select name="listing[category]" class="form-select" aria-label="Default select example">
+                            <option value="" selected>Select Category</option>
+                            <option value="Mountains">Mountains</option>
+                            <option value="Iconic City">Iconic City</option>
+                            <option value="Castles">Castles</option>
+                            <option value="Camping">Camping</option>
+                            <option value="Farms">Farms</option>
+                            <option value="Artict">Artict</option>
+                            <option value="Domes">Domes</option>
+                            <option value="Boats">Boats</option>
+                            <option value="Amazing Pool">Amazing Pool</option>
+                        </select>
+                        <br>
+                    </div>
+
+                    <button class="btn btn-dark create-btn">Create</button>
+                    <br><br>
+                </form>
+            </div>
+        </div>
+    </body>

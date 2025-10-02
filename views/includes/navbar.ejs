@@ -1,0 +1,66 @@
+<style>
+  .btn-Search {
+    background-color: #fe424d;
+    color: #ffff;
+    border-radius: 2.5rem;
+    padding: 0 1rem 0 1rem;
+  }
+
+  .btn-Search:hover {
+    background-color: #fe424d;
+    color: #ffff;
+  }
+
+  .search-box {
+    margin-bottom: 0.1rem;
+  }
+  .btn-Search i {
+    display: inline;
+    margin-right: 0.5rem;
+  }
+  .search-boxx1{
+    border-radius: 2.5rem;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    font-size: 1rem;
+  }
+
+</style>
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <!--This is bootstrap css file for navbar-->
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-solid fa-igloo"></i></a> <!--Redirect to Home screen-->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Explore</a>
+      </div>
+
+      <div class="navbar-nav ms-auto">
+        <nav class="navbar navbar-light search-box">
+          <form class="d-flex" method="GET" action="/listings">
+            <input name="country" class="form-control me-2 search-boxx1" type="search" placeholder="Search Destinations" aria-label="Search">
+            <button class="btn btn-Search" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+          </form>
+        </nav>
+      </div>
+
+
+
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/new">Airbnb your home</a>
+        <% if(!currentUser) { %>
+
+          <a type="butto" class="btn btn-outline-success ms-2" aria-current="page" href="/signup">Sign up</a>
+          <a type="butto" class="btn btn-outline-success ms-2" href="/login">Log in</a>
+          <% } %>
+            <% if(currentUser) { %>
+              <a type="butto" class="btn btn-outline-danger ms-2" href="/logout">Log Out</a>
+              <% } %>
+
+
+      </div>
+    </div>
+  </div>
+</nav>
